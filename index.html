@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 100 Days! 💕</title>
+  <meta name="description" content="A special 100 days anniversary surprise website made with love.">
+  
+  <!-- Google Fonts: Dancing Script, Pacifico for headings & handwriting, Quicksand for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Pacifico&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Canvas for background floating hearts and sparkles -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Audio Player & Toggle -->
+  <div class="audio-control-container">
+    <button id="audioToggle" class="audio-btn" aria-label="Toggle music" title="Toggle background music">
+      <span class="music-icon">🎵</span>
+      <span class="sound-wave">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+    <!-- Placeholder audio file: replace src="music.mp3" with your romantic song file if you have one -->
+    <audio id="bgMusic" loop src=""></audio>
+  </div>
+
+  <!-- Live Name Customizer Pill (Easy edit for testing or customization) -->
+  <div class="customize-bar" id="customizeBar">
+    <button class="customize-toggle" id="customizeToggle" title="Customize Names">✨ Edit Names</button>
+    <div class="customize-dropdown" id="customizeDropdown">
+      <p class="customize-title">Personalize Your Names 💖</p>
+      <div class="input-group">
+        <label for="herNameInput">Her Name:</label>
+        <input type="text" id="herNameInput" value="Rameen Ejaz" placeholder="e.g. Rameen Ejaz">
+      </div>
+      <div class="input-group">
+        <label for="myNameInput">My Name:</label>
+        <input type="text" id="myNameInput" value="Abdullah Umer" placeholder="e.g. Abdullah Umer">
+      </div>
+      <button id="saveNamesBtn" class="save-btn">Apply Magic ✨</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="page-wrapper">
+
+    <!-- HERO / INTRO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-card glass-card fade-in">
+        <div class="scrapbook-tape top-left"></div>
+        <div class="scrapbook-tape top-right"></div>
+        
+        <div class="badge-pill">100 DAYS OF LOVE 💕</div>
+        
+        <h1 class="hero-title">
+          Happy <span class="counter-box"><span id="daysCounter">0</span></span> Days, <br>
+          <span class="her-name-text herNameDisplay">Rameen Ejaz</span>! 💕
+        </h1>
+
+        <p class="hero-subtitle">
+          100 days of you and me, and I'd pick you all over again.
+        </p>
+
+        <div class="hero-decorations">
+          <span class="sparkle-emoji">✨</span>
+          <span class="heart-pulse-big">💖</span>
+          <span class="sparkle-emoji">✨</span>
+        </div>
+
+        <a href="#why-i-love-you" class="scroll-hint">
+          <span class="scroll-text">Scroll to explore our journey</span>
+          <span class="bouncing-heart">👇 ❤️</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 1: WHY I LOVE YOU -->
+    <section class="content-section" id="why-i-love-you">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Why I Love You 💌</h2>
+        <p class="section-subtitle">Tap or hover on each card to flip!</p>
+      </div>
+
+      <div class="flip-cards-grid">
+        <!-- Card 1 -->
+        <div class="flip-card fade-in" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-pastel-pink">
+              <div class="card-icon">🥰</div>
+              <h3 class="card-front-title">Reason #1</h3>
+              <p class="tap-hint">Tap to flip ✨</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="card-back-icon">✨</div>
+              <p class="card-back-text">You're so cute 🥰</p>
+              <p class="card-subtext">Every single smile of yours melts my heart completely!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flip-card fade-in" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-pastel-peach">
+              <div class="card-icon">😂</div>
+              <h3 class="card-front-title">Reason #2</h3>
+              <p class="tap-hint">Tap to flip ✨</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="card-back-icon">🌟</div>
+              <p class="card-back-text">You're funny & always make me laugh 😂</p>
+              <p class="card-subtext">Life is so much brighter when we're laughing together!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 (Cheeks Pinch Interactive Card) -->
+        <div class="flip-card fade-in cheek-card-wrapper" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-pastel-lavender cheek-interactive" id="cheekCard">
+              <div class="card-icon cheek-emoji" id="cheekEmoji">🍑</div>
+              <h3 class="card-front-title">Reason #3</h3>
+              <p class="tap-hint">Pinch my cheeks or tap to flip! 🤏</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="card-back-icon">🤏</div>
+              <p class="card-back-text">I'm obsessed with your cheeks 🍑</p>
+              <p class="card-subtext">(Pinchable, squishable, and 100% irresistible!)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flip-card fade-in" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-pastel-cream">
+              <div class="card-icon">🤍</div>
+              <h3 class="card-front-title">Reason #4</h3>
+              <p class="tap-hint">Tap to flip ✨</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="card-back-icon">🕊️</div>
+              <p class="card-back-text">You're extremely loyal 🤍</p>
+              <p class="card-subtext">Knowing you have my back gives me all the strength in the world.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="flip-card fade-in" tabindex="0">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-pastel-rose">
+              <div class="card-icon">🎁</div>
+              <h3 class="card-front-title">Reason #5</h3>
+              <p class="tap-hint">Tap to flip ✨</p>
+            </div>
+            <div class="flip-card-back">
+              <div class="card-back-icon">💝</div>
+              <p class="card-back-text">You're so thoughtful 🎁</p>
+              <p class="card-subtext">You remember every tiny detail and care so deeply.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Playful Footer Tortoise Card -->
+      <div class="tortoise-card scrapbook-card fade-in" id="tortoiseSection">
+        <div class="scrapbook-tape top-center"></div>
+        <p class="tortoise-text">
+          "...and sometimes you're slow as a tortoise 🐢 but I love you at every speed."
+        </p>
+        <div class="tortoise-track" id="tortoiseTrack">
+          <div class="tortoise-runner" id="tortoiseRunner">🐢</div>
+          <div class="tortoise-finish" id="tortoiseFinish">❤️</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: YOUR ACHIEVEMENTS -->
+    <section class="content-section" id="achievements">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Your Achievements 🏆</h2>
+        <p class="section-subtitle">I'm so proud of you, always!</p>
+      </div>
+
+      <div class="achievements-shelf">
+
+        <div class="achievement-card fade-in">
+          <div class="achievement-badge">🏅</div>
+          <div class="achievement-content">
+            <h3>Got a distinction in Maths</h3>
+            <p>Brilliant, smart, and unstoppable! 📐✨</p>
+          </div>
+        </div>
+
+        <div class="achievement-card fade-in">
+          <div class="achievement-badge">🏆</div>
+          <div class="achievement-content">
+            <h3>Took her school all the way to the final</h3>
+            <p>A true natural leader and champion! 📣🔥</p>
+          </div>
+        </div>
+
+        <div class="achievement-card fade-in">
+          <div class="achievement-badge">⚽</div>
+          <div class="achievement-content">
+            <h3>Recently won a football match</h3>
+            <p>MVP on and off the field! ⚽🥇</p>
+          </div>
+        </div>
+
+        <!-- HARVARD CARD (BIGGEST & MOST CELEBRATED) -->
+        <div class="achievement-card harvard-card fade-in" id="harvardCard">
+          <div class="harvard-sparkles">✨ 🎉 🎓 🎉 ✨</div>
+          <div class="achievement-badge harvard-badge">🎓</div>
+          <div class="achievement-content">
+            <span class="harvard-tag">SUPERSTAR MOMENT ⭐</span>
+            <h3 class="harvard-title">Got into Harvard!</h3>
+            <p class="harvard-desc">The biggest achievement for the brightest soul! The world is yours. 🏛️❤️</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="proud-footer fade-in">
+        <p class="proud-text">"Proud of you doesn't even cover it." 💖</p>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY PLACEHOLDER STRIP -->
+    <section class="content-section gallery-section" id="gallery">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Our Favorite Moments 📸</h2>
+        <p class="section-subtitle">A quick peek into our 100 days of happiness</p>
+      </div>
+
+      <div class="polaroid-strip">
+        <!-- Polaroid 1 -->
+        <div class="polaroid-card fade-in rotate-left" tabindex="0">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="images/photo1.jpg" alt="Our Sunset Picnic" loading="lazy">
+          </div>
+          <p class="polaroid-caption">Our Magical Sunset 🌅</p>
+        </div>
+
+        <!-- Polaroid 2 -->
+        <div class="polaroid-card fade-in rotate-right" tabindex="0">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="images/photo2.jpg" alt="Cozy Chai Moments" loading="lazy">
+          </div>
+          <p class="polaroid-caption">Cozy Chai Moments ☕</p>
+        </div>
+
+        <!-- Polaroid 3 -->
+        <div class="polaroid-card fade-in rotate-straight" tabindex="0">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-image-frame">
+            <img src="images/photo3.jpg" alt="Graduation Celebration" loading="lazy">
+          </div>
+          <p class="polaroid-caption">Future Harvard Grad 🎓</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FOREVER WITH YOU -->
+    <section class="content-section" id="forever">
+      <div class="love-letter-card parchment-card fade-in">
+        <div class="stamp-badge">100 DAYS 💌</div>
+        
+        <h2 class="letter-title">Forever With You 💕</h2>
+
+        <p class="letter-paragraph">
+          "I want to spend the rest of our 100 days, and every year, every weekend and every morning with you."
+        </p>
+
+        <div class="rituals-container">
+          <h3 class="rituals-title">Our Little Rituals ✨</h3>
+          
+          <div class="ritual-row">
+            <span class="ritual-icon">☕</span>
+            <span class="ritual-text">You make me chai every morning</span>
+          </div>
+
+          <div class="ritual-row">
+            <span class="ritual-icon">💐</span>
+            <span class="ritual-text">I buy you corsages and bouquets</span>
+          </div>
+
+          <div class="ritual-row">
+            <span class="ritual-icon">🍗</span>
+            <span class="ritual-text">And KFC just for you</span>
+          </div>
+        </div>
+
+        <div class="getaway-container">
+          <p class="getaway-text">
+            "You're my partner in crime, and I wouldn't want anyone else in the getaway car."
+          </p>
+          <div class="getaway-car" id="getawayCar">🚗💨 ❤️</div>
+        </div>
+
+        <div class="letter-closing">
+          <p class="script-closing">
+            Happy 100 days, my love.<br>
+            Here's to forever. ❤️
+          </p>
+          <p class="signature-line">
+            Love, <span class="myNameDisplay">Abdullah Umer</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SURPRISE BUTTON -->
+    <section class="interactive-section fade-in">
+      <button id="surpriseBtn" class="surprise-button">
+        <span class="btn-heart">💌</span> Click me <span class="btn-heart">💌</span>
+      </button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>Handmade with all my heart for <span class="herNameDisplay">Rameen Ejaz</span> 💕</p>
+      <p class="footer-sub">Day 1 to 100 and Beyond ✨</p>
+    </footer>
+
+  </main>
+
+  <!-- SURPRISE MODAL -->
+  <div class="modal-overlay" id="surpriseModal" aria-hidden="true">
+    <div class="modal-card scrapbook-card">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+      <div class="modal-header-icon">☕ ❤️</div>
+      <h3 class="modal-title">Surprise Message!</h3>
+      <p class="modal-message">
+        "I love you more than chai. And that's saying a lot." ☕❤️
+      </p>
+      <div class="modal-decorations">
+        <span>🥰</span><span>💕</span><span>✨</span>
+      </div>
+      <button class="modal-btn" id="modalOkBtn">I Love You Too! 💖</button>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL FOR POLAROIDS -->
+  <div class="lightbox-overlay" id="lightboxModal" aria-hidden="true">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose">×</button>
+      <img src="" id="lightboxImg" alt="Enlarged photo">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Canvas Confetti Script (Loaded via unpkg CDN with fallback) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
